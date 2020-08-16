@@ -172,6 +172,8 @@ def opening(cluster_data, number_of_releases):
 
         elif selection == "4":
             word_cloud(location_data)
+        else:
+            print("Option is invalid.")
 
         again = input("Play again? Y/N")
         if again.lower() == "n":
@@ -237,7 +239,7 @@ def rank_cases(cluster_data, location_data):
     day = input("Enter ending day: ")
     chosen_end_date = datetime.date(2020, int(month), int(day))
     chosen_end_index = cluster_data[0].index(chosen_end_date) + 1
-    print(chosen_end_index)
+
 
     # search for case count within the given dates
     case_count = [sum(data[chosen_start_index:chosen_end_index]) for data in cluster_data[1:]]
